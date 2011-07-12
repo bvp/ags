@@ -58,8 +58,6 @@ Myapp::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-#  map.connect ":id", :controller => "pages", :action => "show"
-#  map.connect ":id.html", :controller => "pages", :action => "show"
   match ":id" => "pages#show"
   match ":id.html"  => "pages#show"
   resources :pages do
