@@ -62,4 +62,5 @@ Myapp::Application.routes.draw do
 #  map.connect ":id.html", :controller => "pages", :action => "show"
   match ":id" => "pages#show"
   match ":id.html"  => "pages#show"
+  root :to => "pages#index"
 end
