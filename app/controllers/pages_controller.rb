@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.xml
   def index
-    @pages = Page.all
+    @pages = Page.find(:all, :order => :position)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -85,5 +85,31 @@ class PagesController < ApplicationController
       format.html { redirect_to(pages_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  # PUT /pages/1;higher
+  def higher
+    @page = Page.find(params[:id])
+    unless @page.nil?
+      if @page.first?
+        @page.move_to_bottom
+      else
+        @page.move_higher
+      end
+    end
+    redirect_to pages_url
+  end
+  
+  # PUT /pages/1;lower
+  def lower
+    page = Page.find(params[:id])
+    unless page.nil?
+      if page.last?
+        page.move_to_top
+      else
+        page.move_lower
+      end
+    end
+    redirect_to page_url
   end
 end

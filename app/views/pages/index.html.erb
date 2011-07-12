@@ -1,6 +1,6 @@
 <h1>Listing pages</h1>
 
-<table>
+<table border="1">
   <tr>
     <th>Name</th>
     <th>Title</th>
@@ -20,7 +20,11 @@
     <td><%= page.body %></td>
     <td><%= page.updated_on %></td>
     <td><%= page.parent_id %></td>
-    <td><%= page.position %></td>
+    <td>
+    	<%= page.position %>
+    	<%= link_to 'Up', higher_page_path(page), :method => :put %>
+    	<%= link_to 'Down', lower_page_path(page), :method => :put %>
+    </td>
     <td><%= link_to 'Show', page %></td>
     <td><%= link_to 'Edit', edit_page_path(page) %></td>
     <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>

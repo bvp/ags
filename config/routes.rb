@@ -62,5 +62,9 @@ Myapp::Application.routes.draw do
 #  map.connect ":id.html", :controller => "pages", :action => "show"
   match ":id" => "pages#show"
   match ":id.html"  => "pages#show"
+  resources :pages do
+    put :higher, :on => :member
+    put :lower, :on => :member
+  end
   root :to => "pages#index"
 end
