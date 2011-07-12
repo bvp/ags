@@ -13,6 +13,8 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
+    @page = Page.find_by_name(params[:id]) # GET/pages/name
+#    @page ||= Page.find(params[:id]) # GET/pages/id
     @page = Page.find(params[:id])
 
     respond_to do |format|
