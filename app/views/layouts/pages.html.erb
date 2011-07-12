@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title><%= (@page.nil? || @page.title.nil?) ? "Site title" : @page.title %></title>
+	</head>
+	<body style="background-color: #ddd">
+		<div style="min-height: 600px; margin: 0 20px; background-color: white">
+			<div style="height: 80px; background-color: #88a; text-align: center; padding: 1em">
+				<h1>You are Welcome</h1>
+			</div>
+			<div>
+				<div style="float: left; background-color: #888">
+					<%= yield :sidemenu %>
+				</div>
+				<div style="margin-left: 150px">
+					<p style="color: green"><%= flash[:notice] %></p>
+					<%= yield :layout %>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
