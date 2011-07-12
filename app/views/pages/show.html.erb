@@ -1,35 +1,13 @@
-<p id="notice"><%= notice %></p>
+<% content_for(:sidemenu) do %>
+<h3>Pages:</h3>
+<ul>
+	<% for item in @pages %>
+		<li><%= link_to item.title, page_url(:id => item.name) %></li>
+	<% end %>
+</ul>
+<% end %>
 
-<p>
-  <b>Name:</b>
-  <%= @page.name %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @page.title %>
-</p>
-
-<p>
-  <b>Body:</b>
+<h1><%= @page.title %></h1>
+<div>
   <%= @page.body %>
-</p>
-
-<p>
-  <b>Updated on:</b>
-  <%= @page.updated_on %>
-</p>
-
-<p>
-  <b>Parent:</b>
-  <%= @page.parent_id %>
-</p>
-
-<p>
-  <b>Position:</b>
-  <%= @page.position %>
-</p>
-
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+</div>
