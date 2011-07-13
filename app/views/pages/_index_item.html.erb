@@ -9,8 +9,6 @@
   <td><%=h index_item.parent_id %></td>
   <td>
     <%=h index_item.position %>
-    <%= link_to 'Up', higher_page_path(index_item), :method => :put %>
-    <%= link_to 'Dn', lower_page_path(index_item), :method => :put %>
   </td>
   <td><%= link_to 'Show', page_path(index_item) %></td>
   <td><%= link_to 'Edit', edit_page_path(index_item) %></td>

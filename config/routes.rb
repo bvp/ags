@@ -60,10 +60,10 @@ Myapp::Application.routes.draw do
 
   match ":id" => "pages#show"
   match ":id.html"  => "pages#show"
-  resources :pages do
-    put :higher, :on => :member
-    put :lower, :on => :member
-  end
+#  resources :pages do
+#    put :higher, :on => :member
+#    put :lower, :on => :member
+#  end
 #  root :to => "pages#index"
-  match "/" => "pages#index"
+#  match "/" => "pages#index"
 end

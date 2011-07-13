@@ -87,29 +87,4 @@ class PagesController < ApplicationController
     end
   end
   
-  # PUT /pages/1;higher
-  def higher
-    @page = Page.find(params[:id])
-    unless @page.nil?
-      if @page.first?
-        @page.move_to_bottom
-      else
-        @page.move_higher
-      end
-    end
-    redirect_to(page_url)
-  end
-  
-  # PUT /pages/1;lower
-  def lower
-    @page = Page.find(params[:id])
-    unless @page.nil?
-      if @page.last?
-        @page.move_to_top
-      else
-        @page.move_lower
-      end
-    end
-    redirect_to(page_url)
-  end
 end
