@@ -1,0 +1,7 @@
+<li>
+  <%= prefix ||= nil %>
+  <%= link_to menu_item.title, page_path(menu_item.name) %>
+</li>
+<% unless menu_item.children.nil? %>
+<%= render(:partial => "menu_item", :collection => menu_item.children, :locals => {:prefix => '|--'} )%>
+<% end %>
