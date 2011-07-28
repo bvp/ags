@@ -1,7 +1,7 @@
 <tr>
   <td>
     <%= prefix ||= nil %>
-    <%=h index_item.name %>
+    <%= link_to index_item.name, page_path(index_item) %>
   </td>
   <td><%=h index_item.title %></td>
   <td><%=h index_item.body %></td>
@@ -10,7 +10,6 @@
   <td>
     <%=h index_item.position %>
   </td>
-  <td><%= link_to 'Show', page_path(index_item) %></td>
   <td><%= link_to 'Edit', edit_page_path(index_item) %></td>
   <td><%= link_to 'Destroy', page_path(index_item), :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>
