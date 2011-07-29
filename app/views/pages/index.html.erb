@@ -1,20 +1,26 @@
-<h1>Listing pages</h1>
-
-<table border="1">
-  <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Updated on</th>
-    <th>Parent</th>
-    <th>Position</th>
-    <th></th>
-    <th></th>
-  </tr>
+<div align="center">
+<table border="0">
+	<tr>
+		<td align="left"><h1>Listing pages</h1></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td align="right"><%= link_to (new_page_path) do %><img src="/images/new_page.jpg"><% end %></td>
+	</tr>
+	<tr>
+		<th>Name</th>
+		<th>Title</th>
+		<th>Updated on</th>
+		<th>Parent</th>
+		<th>Position</th>
+		<th></th>
+		<th></th>
+	</tr>
 
 <%= render(:partial => "index_item", :collection => @pages )%>
 </table>
+</div>
 
 <br />
-
-<%= link_to 'New Page', new_page_path %>
