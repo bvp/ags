@@ -7,14 +7,8 @@
   <td><%=h index_item.updated_on %></td>
   <td><%=h index_item.parent_id %></td>
   <td><%=h index_item.position %></td>
-  <td><%= link_to (edit_page_path(index_item)) do %>
-  	<img src="/images/edit.gif" />
-  <% end %>
-  </td>
-  <td><%= link_to (page_path(index_item), :confirm => 'Are you sure?', :method => :delete) do %>
-  	<img src="/images/del.png" />
-  <% end %>	
-  </td>
+  <td><%= link_to image_tag("/images/edit.gif", :border=>0), edit_page_path(index_item) %></td>
+  <td><%= link_to image_tag("/images/del.png", :border=>0), page_path(index_item), :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>
 <% unless index_item.children.nil? %>
 <%= render(:partial => "index_item", :collection => index_item.children, :locals => {:prefix => '|--'} )%>
