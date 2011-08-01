@@ -64,6 +64,7 @@ Myapp::Application.routes.draw do
 #    put :higher, :on => :member
 #    put :lower, :on => :member
 #  end
-#  root :to => "pages#index"
+  root :to => "pages#index"
+  root :controller => "pages", :action => "index"
 #  match "/" => "pages#index"
 end
