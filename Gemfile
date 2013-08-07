@@ -8,7 +8,7 @@ gem "simple-navigation"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# gem 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -32,3 +32,15 @@ gem 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+platforms :ruby do
+  gem 'sqlite3'
+  gem 'unicorn'
+end
+
+platform :jruby do
+  gem 'jruby-openssl'
+  gem 'activerecord-jdbcsqlite3-adapter'
+  gem 'puma'
+  gem 'trinidad'
+end

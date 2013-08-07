@@ -1,7 +1,0 @@
-.bundle
-._*
-*.lock
-db/*.sqlite3
-log/*.log
-tmp/
-backup/
